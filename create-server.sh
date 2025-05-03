@@ -6,6 +6,7 @@ SERVER_TYPE="cx22"
 IMAGE="alma-9"
 SSH_KEY_NAME="mch-portatil"
 LOCATION="fsn1" # Cambia esto si prefieres otra ubicación, como "nbg1" o "hel1"
+CLOUD_INIT_FILE="cloud-init.yml"
 
 # Crear el servidor
 hcloud server create \
@@ -13,7 +14,8 @@ hcloud server create \
   --type "$SERVER_TYPE" \
   --image "$IMAGE" \
   --ssh-key "$SSH_KEY_NAME" \
-  --location "$LOCATION"
+  --location "$LOCATION" \
+  --user-data-from-file "$CLOUD_INIT_FILE"
 
 # Verificar si el servidor fue creado correctamente
 if [ $? -eq 0 ]; then

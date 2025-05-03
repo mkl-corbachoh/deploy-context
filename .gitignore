@@ -1,6 +1,2 @@
 # Excluir archivos sensibles
-inventory
-*/roles/common/files/authorized_keys
-*/group_vars/all.yml
-*/host_vars/*.yml
-!*/host_vars/example.yml
+cloud-init.yml
