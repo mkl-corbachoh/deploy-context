@@ -8,6 +8,10 @@ SSH_KEY_NAME="mch-portatil"
 LOCATION="fsn1" # Cambia esto si prefieres otra ubicación, como "nbg1" o "hel1"
 CLOUD_INIT_FILE="cloud-init.yml"
 FIREWALL_NAME="firewall-1"
+USERNAME="admin-mkl"
+
+# Cargar las variables en el template
+sed "s/\${USER}/$USERNAME/g" cloud-init.example.yml > cloud-init.yml
 
 # Instalar jq si no está instalado
 if ! command -v jq &> /dev/null; then
